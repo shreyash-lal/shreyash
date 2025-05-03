@@ -1,0 +1,773 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root{  
+    --main-color: #ece9ee;
+    --red: #e74c3c;
+    --orange: #f39c12;
+    --white: #fff;
+    --black: #2c3e50;
+    --light-color: #888;
+    --light-bg: #eee;
+    --border: .1rem solid rgba(0, 0, 0, 0.2);
+    --theme: rgb(121, 0, 202);
+}
+
+*{
+    font-family: "Nunito", sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+}
+
+*::selection {
+    background-color: var(--theme);
+    color: var(--white);
+}
+
+*::-webkit-scrollbar{
+    height: 0;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: var(--theme);
+    border-radius: 4rem;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: rgb(236, 233, 233);
+    padding-left: 25rem;
+    transition: 1s ease;
+}
+
+.header {
+    background-color: var(--white);
+    border-bottom: var(--border);
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+
+.heading {
+    padding-bottom: 1.8rem;
+    border-bottom: var(--border);
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+    font-weight: 200;
+}
+
+ 
+/* Section  */
+.header .flex {
+    padding: 1rem 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header .flex .logo {
+    font-size: 4rem;
+    color: var(--theme);
+    
+}
+
+.header .flex .icons div{
+    font-size: 2.3rem;
+    color: var(--theme);
+    border-radius: .5rem;
+    height: 3.4rem;
+    cursor: pointer;
+    width: 5.5rem;
+    text-align: center;
+    padding-top: .5rem;
+    margin-left: .5rem;
+    background-color: var(--white);
+    z-index: 1200;
+}
+
+.header .flex .icons div:hover {
+    background-color: var(--light-bg);
+    
+}
+
+#linkedin i {
+    color: rgb(21, 69, 173);
+    font-size: 2.5rem;
+    margin-right: .5rem;
+}
+
+#linkedin:hover {
+    background-color: var(--light-bg);
+}
+
+#github i {
+    color: rgb(3, 112, 12);
+    font-size: 2.5rem;
+    margin-left: 1rem;
+}
+
+#github:hover {
+    background-color: var(--light-bg);
+}
+
+#resume{
+    background-color: var(--theme);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+#resume i {
+    color: var(--white);
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+#resume i:hover {
+    color: var(--theme);
+}
+
+#resume:hover {
+    background-color: var(--light-bg);
+    color: var(--theme);
+}
+
+
+
+
+
+.side-bar img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+
+.side-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    width: 25rem;
+    background-color: var(--theme);
+    border-right: var(--border);
+    transition: .2s linear;
+    z-index: 1200;
+}
+
+.side-bar .profile {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.side-bar .profile h3 {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.side-bar .profile span{
+    color: var(--white);
+    font-size: 1.6rem;
+}
+
+.side-bar .nav-bar a{
+    display: block;
+    padding: 2rem;
+    margin: .5rem 0;
+    font-size: 1.8rem;
+}
+
+.side-bar .nav-bar a:hover{
+    background-color: rgb(7, 7, 7);
+}
+
+.side-bar .nav-bar a i {
+    color: var(--main-color);
+    margin-right: 1.5rem;
+    transition: .2s linear;
+}
+
+.side-bar .nav-bar a:hover i{
+    margin-left: 1.5rem;
+}
+
+.side-bar .nav-bar a span {
+    color: var(--main-color);
+}
+
+
+
+
+.side-bar .close-side-bar {
+    text-align: right;
+    padding: 2rem;
+    padding-top: .2rem;
+    padding-bottom: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.side-bar .close-side-bar i{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.4rem;
+    color: #fff;
+    font-size: 2rem;
+    background-color: var(--red);
+    text-align: center;
+    border-radius: 5rem;
+}
+
+.side-bar .close-side-bar i:hover{
+    background-color: var(--black);
+    color: var(--red);
+}
+
+.side-bar.active {
+    left: -31rem;
+}
+
+
+
+.content {
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    margin: 1rem;
+    border-radius: 2rem;
+}
+
+#about {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.content .about-box {
+    padding: 2rem;
+    text-align: left;
+    font-size: 1.8rem;
+    color: var(--black);
+}
+
+.content .description {
+    text-align: left;
+    font-size: 1.8rem;
+    color: var(--black);
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    padding: 2rem;
+}
+
+.skilled{
+    display: flex;
+    gap: 12rem;
+    background: #f5f5f5;
+    padding: 2rem;
+}
+
+
+.skillset {
+    padding: 2rem;
+    height: 100%;
+    width: 55%;
+    margin-left: 3rem;
+    border-radius: 25px;
+    color: var(--black);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    border: var(--border);
+}
+
+.skillset h2{
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 5rem;
+}
+
+
+.skill-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+.skill {
+    margin: 20px 0;
+}
+.skill-name {
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.skill-name i {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    color: var(--theme);
+}
+.progress-bar {
+    background: #ddd;
+    height: 20px;
+    border-radius: 10px;
+}
+.progress {
+    width: 0;
+    height: 100%;
+    background: var(--theme);
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+}
+
+.skilled .image img{
+    height: 30rem;
+    width: 30rem;
+}
+
+/* Projects Section */
+
+#projects {
+    margin: 2rem;
+    display: grid;
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem;
+    border-radius: 2rem;
+}
+
+#projects h2{
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+
+.project-card {
+    margin-top: 2rem;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: var(--white);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 45rem;
+    height: 20rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.project-card p{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+
+
+.github-btn {
+    background-color: rgb(3, 112, 12);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+
+.github-btn:hover {
+    background-color: var(--black);
+}
+
+#reviews {
+    padding: 2rem;
+    background: #f5f5f5;
+}
+
+#reviews h2 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+.review-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2rem;
+}
+.review-cards {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+}
+
+.review-card {
+    flex: 0 0 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+
+.review-card h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: .1rem;
+}
+
+.review-card span {
+    color: var(--theme);
+    font-size: 1.6rem;
+}
+
+.review-card p {
+    font-size: 1.6rem;
+    color: var(--light-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+.review-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.scroll-btn.left { left: 10px; }
+.scroll-btn.right { right: 10px; }
+
+.scroll-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+#contact {
+    padding: 4rem 2rem;
+    background: var(--white);
+    border-radius: 2rem;
+    margin: 2rem;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 3rem;
+}
+
+.data{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.data .data-box {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    color: var(--theme);
+    font-size: 1.8rem;
+    width: 100%;
+}
+
+.contact-form {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.contact-form input {
+    margin: 2rem 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background: var(--light-bg);
+}
+
+.contact-form textarea {
+    height: 20rem;
+    resize: none;
+}
+
+.contact-form button {
+    background: var(--theme);
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.contact-form button:hover {
+    background: var(--black);
+}
+
+
+
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1200px){
+
+    body{
+        padding-left: 0;
+    }
+
+    .side-bar{
+        transition: .2s linear;
+        left: -30rem;
+    }
+
+    .side-bar.active{
+        left: 0;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,.2);
+    }
+
+    .side-bar .close-side-bar{
+        display: block;
+    }
+
+
+}
+
+@media(max-width:768px){
+    .skilled {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .skillset {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .skilled .image img {
+        height: 25rem;
+        width: 25rem;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    html {
+        font-size: 55%;
+    }
+
+    .header .flex .logo {
+        font-size: 3rem;
+    }
+
+    .content .description {
+        padding: 1rem;
+    }
+}
+
+@media(max-width:450px){
+    html {
+        font-size: 50%;
+    }
+
+    .header .flex .logo {
+        font-size: 2.5rem;
+    }
+
+    #resume span {
+        display: none;
+    }
+
+    #resume {
+        padding: .6rem;
+        font-size: 1.6rem;
+    }
+
+    .skilled .image img {
+        height: 20rem;
+        width: 20rem;
+    }
+
+    .project-card img {
+        width: 100;
+        height: auto;
+    }
+
+    .side-bar img {
+        height: 8rem;
+        width: 8rem;
+    }
+
+    #reviews h2 {
+        font-size: 2rem;
+    }
+
+    .review-card h3 {
+        font-size: 1.8rem;
+    }
+    .review-card span {
+        font-size: 1.4rem;
+    }
+    .review-card p {
+        font-size: 1.4rem;
+    }
+    .review-card img {
+        width: 60px;
+        height: 60px;
+    }
+    .review-card p {
+        font-size: 1.4rem;
+    }
+    
+    #contact h2 {
+        font-size: 2rem;
+    }    
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.4rem;
+    }
+
+    .contact-form button {
+        font-size: 1.6rem;
+    }
+
+    .data .data-box {
+        font-size: 1.6rem;
+
+    }
+    .data .data-box i {
+        font-size: 2.5rem;
+    }
+    .data .data-box span {
+        font-size: 1.4rem;
+    }
+    .data .data-box h3 {
+        font-size: 1.8rem;
+    }
+    .data .data-box p {
+        font-size: 1.4rem;
+    }
+    .data{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    
+    
+
+
+
+
+}
